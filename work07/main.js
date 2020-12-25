@@ -3,7 +3,7 @@ window.addEventListener('load',init);
 
 let width = window.innerWidth;
 let height = window.innerHeight;
-let r01 = 80;
+let r01 = 120;
 let r02 = 300
 
 function init(){
@@ -50,21 +50,26 @@ function init(){
     const group01 = new THREE.Group();
     scene.add(group01)
 
-    const material02 = new THREE.MeshLambertMaterial({color:0x4f0000})
-    for(let i = 0;i < 1300; i++){
+    const material02 = new THREE.MeshLambertMaterial({
+        color:0x4f0000,
+        transparent: true,
+        opacity: 0.75
+    })
+    for(let i = 0;i < 700; i++){
         let getRandomInt = function(min, max) {
             return Math.floor(Math.random() * (max - min)) + min;
         };
-        let rad = getRandomInt(0,800)
-        let rad2 = getRandomInt(0,800)
+        let rad = getRandomInt(0,600)
+        let rad2 = getRandomInt(0,600)
         let size = getRandomInt(5,10)
-        const geometry02 = new THREE.BoxGeometry(size,size,size)
+        const geometry02 = new THREE.BoxGeometry(size,size,30)
         const box = new THREE.Mesh(geometry02,material02);
         box.position.x = (Math.cos(rad) * Math.cos(rad2) * -r01)
         box.position.y = (Math.sin(rad2) * r01)
         box.position.z = (Math.sin(rad) * Math.cos(rad2) * r01) 
         box.rotation.x = rad
         box.rotation.y = rad
+        box.lookAt(0, 0, 0);
         group01.add(box);
     }
 
@@ -76,8 +81,8 @@ function init(){
         let getRandomInt = function(min, max) {
             return Math.floor(Math.random() * (max - min)) + min;
         };
-        let rad = getRandomInt(0,800)
-        let rad2 = getRandomInt(0,800)
+        let rad = getRandomInt(0,600)
+        let rad2 = getRandomInt(0,600)
         let size = getRandomInt(5,20)
         const geometry03 = new THREE.BoxGeometry(size,size,size)
         const box = new THREE.Mesh(geometry03,material03);
