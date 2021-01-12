@@ -30,6 +30,7 @@ function init(){
     const linematerial = new THREE.LineBasicMaterial({
         color: 0x1bb300,
         linewidth: 5,
+        blending: THREE.AdditiveBlending,
         morphTargets:true,
         linejoin:"bevel"
     });
