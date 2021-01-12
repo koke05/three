@@ -35,7 +35,7 @@ function init(){
 
     const loader = new THREE.FontLoader();
 
-    loader.load( 'font/Didact Gothic_Regular.json', function ( font ) {
+    loader.load( 'font/Josefin Sans Light_Regular.json', function ( font ) {
         const textgeometry = new THREE.TextGeometry( 'three.js', {
             font: font,
             size: 180,
