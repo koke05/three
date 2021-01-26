@@ -1,4 +1,4 @@
-import * as THREE from "../threejs/three.module.js"
+import * as THREE from "../js/three.module.js"
 window.addEventListener('load',init);
 
 let width = window.innerWidth;
