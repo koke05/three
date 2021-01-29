@@ -4,21 +4,20 @@ window.addEventListener('load',init);
 let width = 500
 let height = 500;
 let size = 2000;
-let length = 300000;
+let length = 250000;
 function init(){
     let renderer = new THREE.WebGLRenderer({
-        canvas: document.querySelector('.myCanvas'),
+        canvas: document.querySelector('.bgCanvas'),
     });
     const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 2000 );
-    camera.position.z = 1000;
-
+    camera.position.z = 1000;  
 
     onResize();
     window.addEventListener('resize',onResize);
 
     function onResize(){
-        let width = 500;
-        let height = 500;
+        let width = window.innerWidth;
+        let height = window.innerHeight;
 
         renderer.setPixelRatio(window.devicePixelRatio);
         renderer.setSize(width, height);
