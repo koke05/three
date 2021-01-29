@@ -8,7 +8,7 @@ let controls;
 const clock = new THREE.Clock();
 
 function init(){
-    let renderer = new THREE.WebGLRenderer({
+    const renderer = new THREE.WebGLRenderer({
         canvas: document.querySelector('.myCanvas')
     });
 
@@ -29,9 +29,9 @@ function init(){
         camera.updateProjectionMatrix();
     }
 
-    let scene = new THREE.Scene();
+    const scene = new THREE.Scene();
 
-    let material = new THREE.MeshLambertMaterial({
+    const material = new THREE.MeshLambertMaterial({
         color:0xffffff,
         wireframe: true
     })
@@ -66,14 +66,14 @@ function init(){
 
 
 
-    let directionalLight = new THREE.DirectionalLight(0xFFFFFF);
+    const directionalLight = new THREE.DirectionalLight(0xFFFFFF);
     directionalLight.position.set(1, 1, 1);
     scene.add(directionalLight);
 
-    let AmbientLight = new THREE.AmbientLight(0x99999);
+    const AmbientLight = new THREE.AmbientLight(0x99999);
     scene.add(AmbientLight);
 
-    let pointlight = new THREE.PointLight(0xffff00);
+    const pointlight = new THREE.PointLight(0xffff00);
     pointlight.position.set(0,0,0)
     scene.add(pointlight)
 

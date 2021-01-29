@@ -5,7 +5,7 @@ let rot = 0;
 let size = 1000;
 
 function init(){
-    let renderer = new THREE.WebGLRenderer({
+    const renderer = new THREE.WebGLRenderer({
         canvas: document.querySelector('.myCanvas'),
     });
 
@@ -24,7 +24,7 @@ function init(){
         camera.aspect = width / height;
         camera.updateProjectionMatrix();
     }
-    let scene = new THREE.Scene();
+    const scene = new THREE.Scene();
     scene.fog = new THREE.FogExp2( 0x000000, 0.001 );
     
     const linematerial = new THREE.LineBasicMaterial({

@@ -5,7 +5,7 @@ let length = 150000;
 let r = 500
 
 function init(){
-    let renderer = new THREE.WebGLRenderer({
+    const renderer = new THREE.WebGLRenderer({
         canvas: document.querySelector('.myCanvas'),
     });
     renderer.setClearColor(new THREE.Color(0xe0f7ff));

@@ -6,13 +6,12 @@ let height = 500;
 let size = 2000;
 let length = 300000;
 function init(){
-    let renderer = new THREE.WebGLRenderer({
+    const renderer = new THREE.WebGLRenderer({
         canvas: document.querySelector('.myCanvas'),
     });
     const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 2000 );
     camera.position.z = 1000;
-
-
+    
     onResize();
     window.addEventListener('resize',onResize);
 
@@ -28,7 +27,7 @@ function init(){
     }
     renderer.setClearColor(new THREE.Color(0x0f0f0f));
 
-    let scene = new THREE.Scene();
+    const scene = new THREE.Scene();
     scene.fog = new THREE.FogExp2( 0x000000, 0.002 );
 
     const geometry = new THREE.Geometry();

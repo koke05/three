@@ -2,7 +2,7 @@ import * as THREE from "../js/three.module.js"
 window.addEventListener('load',init);
 
 function init(){
-    let renderer = new THREE.WebGLRenderer({
+    const renderer = new THREE.WebGLRenderer({
         canvas: document.querySelector('.myCanvas'),
         alpha: true
     });
@@ -24,7 +24,7 @@ function init(){
         camera.updateProjectionMatrix();
     }
     // renderer.setClearColor(0xf0fcff);
-    let scene = new THREE.Scene();
+    const scene = new THREE.Scene();
 
     const ambientLight = new THREE.AmbientLight(0x999999);
     scene.add(ambientLight);

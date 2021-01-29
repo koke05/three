@@ -27,11 +27,11 @@ function init(){
         camera.updateProjectionMatrix();
     }
 
-    let scene = new THREE.Scene();
+    const scene = new THREE.Scene();
 
     scene.fog = new THREE.Fog(0x000000,50,2000);
 
-    let group = new THREE.Group();
+    const group = new THREE.Group();
     scene.add(group);
     const material = new THREE.MeshStandardMaterial({color: 0xf2f2f2, roughness:0});
     for (let i = 0; i < 5000; i++) {
@@ -62,7 +62,7 @@ function init(){
     // const lightHelper4 = new THREE.PointLightHelper(light4,10);
     // scene.add(lightHelper4);
 
-    let AmbientLight = new THREE.AmbientLight(0xf0f0f0);
+    const AmbientLight = new THREE.AmbientLight(0xf0f0f0);
     scene.add(AmbientLight);
 
     

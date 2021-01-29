@@ -7,7 +7,7 @@ let r01 = 120;
 let r02 = 300
 
 function init(){
-    let renderer = new THREE.WebGLRenderer({
+    const renderer = new THREE.WebGLRenderer({
         canvas: document.querySelector('.myCanvas')
     });
 
@@ -30,11 +30,11 @@ function init(){
 
     const scene = new THREE.Scene();
 
-    let directionalLight = new THREE.DirectionalLight(0xffffff);
+    const directionalLight = new THREE.DirectionalLight(0xffffff);
     directionalLight.position.set(1, 1, 1);
     scene.add(directionalLight);
 
-    let AmbientLight = new THREE.AmbientLight(0x999999);
+    const AmbientLight = new THREE.AmbientLight(0x999999);
     scene.add(AmbientLight);
 
     const pointlight = new THREE.PointLight(0xff0000, 5, 10, 0);
