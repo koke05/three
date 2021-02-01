@@ -1,8 +1,5 @@
 import * as THREE from "../js/three.module.js";
 window.addEventListener('load',init);
-
-let width = 500
-let height = 500;
 let size = 2000;
 let length = 250000;
 function init(){

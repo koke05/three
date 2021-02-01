@@ -1,8 +1,6 @@
 import * as THREE from "../js/three.module.js";
 window.addEventListener('load',init);
 
-let width = 500
-let height = 500;
 let size = 2000;
 let length = 300000;
 function init(){
@@ -16,8 +14,8 @@ function init(){
     window.addEventListener('resize',onResize);
 
     function onResize(){
-        let width = 500;
-        let height = 500;
+        let width = 650;
+        let height = 650;
 
         renderer.setPixelRatio(window.devicePixelRatio);
         renderer.setSize(width, height);
