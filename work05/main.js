@@ -79,7 +79,7 @@ function init(){
 
     controls = new FlyControls( camera, renderer.domElement );
     controls.movementSpeed = 300;
-    controls.rollSpeed = Math.PI / 30;    
+    controls.rollSpeed = Math.PI / 30;
 
     tick();
 
