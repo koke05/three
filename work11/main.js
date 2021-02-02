@@ -5,12 +5,13 @@ window.addEventListener('load',init);
 let width = window.innerWidth;
 let height = window.innerHeight;
 let controls;
+let clock = new THREE.Clock();
 
 function init(){
     const renderer = new THREE.WebGLRenderer({
         canvas: document.querySelector('.myCanvas'),
     });
-    renderer.setClearColor(new THREE.Color(0x263E78));
+    renderer.setClearColor(new THREE.Color(0x333333));
 
     const camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
     camera.position.set(50,50,10);
@@ -42,10 +43,10 @@ function init(){
     const AmbientLight = new THREE.AmbientLight(0x999999);
     scene.add(AmbientLight);
 
-    scene.fog = new THREE.FogExp2( 0x263E78, 0.002 );
+    scene.fog = new THREE.FogExp2( 0x333333, 0.008 );
 
     const planegeometry = new THREE.PlaneGeometry(510,510,10);
-    const planematerial = new THREE.MeshPhongMaterial({color:0x244876});
+    const planematerial = new THREE.MeshPhongMaterial({color:0x141414});
     planematerial.shininess = 100;
     const planemesh = new THREE.Mesh(planegeometry,planematerial);
     planemesh.position.x = 245; 
@@ -65,8 +66,10 @@ function init(){
             let getRandomInt = function(min, max) {
                 return Math.floor(Math.random() * (max - min)) + min;
             };
-            let h = getRandomInt(0,255)
-            let color = new THREE.Color("rgb("+h+","+h+","+h+")");
+            let r = getRandomInt(0,80)
+            // let g = getRandomInt(0,25)
+            let b = getRandomInt(0,250)
+            let color = new THREE.Color("rgb("+r+","+0+","+b+")");
             const buldingmaterial = new THREE.MeshPhongMaterial({color:color});
             let rand = Math.ceil(Math.random()*10);
             buildings[i] = new THREE.Mesh(buildinggeometry,buldingmaterial);
@@ -79,15 +82,15 @@ function init(){
     }
 
     controls = new FlyControls( camera, renderer.domElement );
-    controls.movementSpeed = 300;
-    controls.rollSpeed = Math.PI / 30; 
-    
+    controls.movementSpeed = 50;
+    controls.rollSpeed = Math.PI / 30;
+
     tick();
 
     function tick(){
         requestAnimationFrame(tick);
-        // camera.position.z -= 0.5;
-        // camera.position.x += 0.5;
+        let delta = clock.getDelta();
+        controls.update(delta)
         renderer.render(scene, camera);
     }
 
